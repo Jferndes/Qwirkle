@@ -1,5 +1,4 @@
-#include "partie.h"
-#include "Qwirkle.h"
+#include "H_partie.h"
 
 void chargement_pioche_degrade(TUILE* pioche)
 {

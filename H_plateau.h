@@ -1,7 +1,7 @@
-#ifndef PLATEAU_H_INCLUDED
-#define PLATEAU_H_INCLUDED
+#ifndef H_PLATEAU_H_INCLUDED
+#define H_PLATEAU_H_INCLUDED
 
-#include "Qwirkle.h"
+#include "H_autre.h"
 
 /** Déclaration des fonctions */
 
@@ -22,4 +22,4 @@ void affiche_plateau(JEU* partie);                               //Affiche le pl
 
 
 
-#endif // PLATEAU_H_INCLUDED
+#endif // H_PLATEAU_H_INCLUDED

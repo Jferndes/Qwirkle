@@ -1,4 +1,4 @@
-#include "Qwirkle.h"
+#include "H_autre.h"
 
 TUILE saisir_tuile()
 {
