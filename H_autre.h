@@ -1,5 +1,5 @@
-#ifndef QWIRKLE_H_INCLUDED
-#define QWIRKLE_H_INCLUDED
+#ifndef H_AUTRE_H_INCLUDED
+#define H_AUTRE_H_INCLUDED
 
 #define PIOCHE_DEGRADE 36
 #define PIOCHE_NORMAL 108
@@ -58,4 +58,4 @@ void vider_le_plateau(JEU* partie);
 void Couleur(int couleurDuTexte,int couleurDeFond); // 0 : Noir --- 1 : Bleu foncé --- 2 : Vert foncé --- 3 : Turquoise --- 4 : Rouge foncé --- 5 : Violet --- 6 : Vert caca d'oie --- 7 : Gris clair --- 8 : Gris foncé --- 9 : Bleu fluo --- 10 : Vert fluo --- 11 : Turquoise --- 12 : Rouge fluo --- 13 : Violet_2 --- 14 : Jaune --- 15 : Blanc
 void copie_tuile(TUILE* tuile_source, TUILE* tuile_destination);
 void permutation_tuile(TUILE* tuile_source, TUILE* tuile_destination);
-#endif // QWIRKLE_H_INCLUDED
+#endif // H_AUTRE_H_INCLUDED

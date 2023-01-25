@@ -1,7 +1,7 @@
-#include "Qwirkle.h"
-#include "menu.h"
-#include "partie.h"
-#include "plateau.h"
+#include "H_autre.h"
+#include "H_menu.h"
+#include "H_partie.h"
+#include "H_plateau.h"
 
 
 #include <stdio.h>
