@@ -1,4 +1,4 @@
-#include "plateau.h"
+#include "H_plateau.h"
 
 void affichage_tuile(TUILE tuile)
 {

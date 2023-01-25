@@ -1,7 +1,7 @@
-#ifndef PARTIE_H_INCLUDED
-#define PARTIE_H_INCLUDED
+#ifndef H_PARTIE_H_INCLUDED
+#define H_PARTIE_H_INCLUDED
 
-#include "Qwirkle.h"
+#include "H_autre.h"
 
 
 /** Déclaration des fonctions */
@@ -16,4 +16,4 @@ void melanger_pioche_normal(TUILE* pioche);
 void chargement_pioche_normal(TUILE* pioche);
 void chargement_pioche_degrade(TUILE* pioche);
 
-#endif // PARTIE_H_INCLUDED
+#endif // H_PARTIE_H_INCLUDED
