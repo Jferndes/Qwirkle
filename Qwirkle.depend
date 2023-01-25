@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1674056780 source:c:\users\joelf\onedrive\bureau\qwirkle\menu.c
+	"menu.h"
+
+1674404209 c:\users\joelf\onedrive\bureau\qwirkle\menu.h
+	"Qwirkle.h"
+
+1674598644 source:c:\users\joelf\onedrive\bureau\qwirkle\main.c
+	"Qwirkle.h"
+	"menu.h"
+	"partie.h"
+	"plateau.h"
+	<stdio.h>
+
+1674596924 c:\users\joelf\onedrive\bureau\qwirkle\qwirkle.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+
+1674598868 c:\users\joelf\onedrive\bureau\qwirkle\partie.h
+	"Qwirkle.h"
+
+1674488931 c:\users\joelf\onedrive\bureau\qwirkle\plateau.h
+	"Qwirkle.h"
+
+1674597044 source:c:\users\joelf\onedrive\bureau\qwirkle\qwirkle.c
+	"Qwirkle.h"
+
+1674597279 source:c:\users\joelf\onedrive\bureau\qwirkle\plateau.c
+	"plateau.h"
+
+1674598836 source:c:\users\joelf\onedrive\bureau\qwirkle\partie.c
+	"partie.h"
+	"Qwirkle.h"
+
