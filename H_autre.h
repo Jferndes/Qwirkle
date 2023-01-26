@@ -50,12 +50,29 @@ typedef struct jeu JEU;
 
 /** Déclaration des fonctions */
 
-TUILE saisir_tuile();
-void saisir_liste_tuile(TUILE* liste_tuile,int nb);
-JOUEUR saisir_joueur();
-void saisir_liste_joueur(JOUEUR * liste_tuile,int nb);
-void vider_le_plateau(JEU* partie);
-void Couleur(int couleurDuTexte,int couleurDeFond); // 0 : Noir --- 1 : Bleu foncé --- 2 : Vert foncé --- 3 : Turquoise --- 4 : Rouge foncé --- 5 : Violet --- 6 : Vert caca d'oie --- 7 : Gris clair --- 8 : Gris foncé --- 9 : Bleu fluo --- 10 : Vert fluo --- 11 : Turquoise --- 12 : Rouge fluo --- 13 : Violet_2 --- 14 : Jaune --- 15 : Blanc
-void copie_tuile(TUILE* tuile_source, TUILE* tuile_destination);
-void permutation_tuile(TUILE* tuile_source, TUILE* tuile_destination);
+TUILE saisir_tuile();                                                       //Saisie d'une tuile (utilisé pour les premier test)
+void saisir_liste_tuile(TUILE* liste_tuile,int nb);                         //Saisie d'une liste de tuile
+JOUEUR saisir_joueur();                                                     //Saisie d'un joueur (utilisé pour les premier test)
+void saisir_liste_joueur(JOUEUR * liste_tuile,int nb);                      //Saisie d'une liste de tuile
+void Couleur(int couleurDuTexte,int couleurDeFond);                         //Change la couleur du fond de texte et du texte. Voir code Couleur plus bas. Ne pas oublier de remettre les paramètres normamaux après utilisation.
+void copie_tuile(TUILE* tuile_source, TUILE* tuile_destination);            //Copie les caractéristiques (couleur,forme)dans une autre tuile
+void permutation_tuile(TUILE* tuile_source, TUILE* tuile_destination);      //Permute les caractéristiques de deux tuiles
 #endif // H_AUTRE_H_INCLUDED
+/*
+--- 0 : Noir
+--- 1 : Bleu foncé
+--- 2 : Vert foncé
+--- 3 : Turquoise
+--- 4 : Rouge foncé
+--- 5 : Violet
+--- 6 : Vert caca d'oie
+--- 7 : Gris clair
+--- 8 : Gris foncé
+--- 9 : Bleu fluo
+--- 10 : Vert fluo
+--- 11 : Turquoise
+--- 12 : Rouge fluo
+--- 13 : Violet_2
+--- 14 : Jaune
+--- 15 : Blanc
+*/

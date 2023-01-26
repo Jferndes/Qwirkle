@@ -9,6 +9,7 @@ TUILE saisir_tuile()
     fflush(stdin);
     printf("Introduire la forme : ");
     scanf("%s",tuile_saisie.forme);
+
     tuile_saisie.forme[MAX_SIZE_TAB_CHAR-1] = '\0';
     fflush(stdin);
 
@@ -53,7 +54,7 @@ void saisir_liste_joueur(JOUEUR* liste_joueur, int nb)
     }
 }
 
-void Couleur(int couleurDuTexte,int couleurDeFond) // fonction d'affichage de couleurs
+void Couleur(int couleurDuTexte,int couleurDeFond) //fonction d'affichage de couleurs voir code couleur dans H_autre.h
 
 {
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
