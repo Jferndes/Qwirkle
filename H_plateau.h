@@ -15,6 +15,7 @@ void affichage_joueur(JOUEUR joueur);
 void affichage_liste_joueur(JOUEUR* liste_joueur, int nb);
 
 //Fonction global
+void vider_le_plateau(JEU* partie);                              //Initialise un plateau vide
 void affiche_plateau(JEU* partie);                               //Affiche le plateau du tour
 
 

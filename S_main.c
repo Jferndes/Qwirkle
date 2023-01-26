@@ -11,18 +11,23 @@
 int main()
 {
     TUILE pioche[MAX_SIZE_TAB];
+    JOUEUR J1;
+    int taille_pioche = 108;
+
+    //*taille_pioche = 108;
 
     chargement_pioche_normal(pioche);
-
-    affichage_liste_tuile(pioche,PIOCHE_NORMAL);
-
-
-    printf("************************MELANGE***************************\n");
-
     melanger_pioche_normal(pioche);
 
-    affichage_liste_tuile(pioche,PIOCHE_NORMAL);
+    printf("******* MAIN VIDE ***********\n");
+    initialiser_main(J1.main);
+    affichage_liste_tuile(J1.main,6);
+
+    printf("******* MAIN pioche ***********\n");
+
+    remplir_main(pioche, &J1, &taille_pioche);
+
+    affichage_liste_tuile(J1.main,6);
 
     return EXIT_SUCCESS;
-
 }

@@ -2,10 +2,7 @@
 
 void affichage_tuile(TUILE tuile)
 {
-
     printf("%s|%s",tuile.couleur, tuile.forme);
-    printf("\n");
-
 }
 
 void affichage_liste_tuile(TUILE* liste_tuile, int nb)
@@ -15,6 +12,11 @@ void affichage_liste_tuile(TUILE* liste_tuile, int nb)
     {
         affichage_tuile(liste_tuile[i]);
     }
+}
+
+void affichage_main_joueur(JOUEUR player)
+{
+    affichage_liste_tuile(player.main,6);
 }
 
 void affichage_joueur(JOUEUR joueur)
@@ -37,9 +39,4 @@ void affichage_liste_joueur(JOUEUR* liste_joueur,int nb)
 
     }
 
-}
-
-void affichage_main_joueur(JOUEUR player){
-
-    affichage_liste_tuile(player.main,6);
 }

@@ -106,3 +106,68 @@ void melanger_pioche_normal(TUILE* pioche)
 
     }
 }
+
+void initialiser_main(TUILE* main)
+{
+    int i;
+    for(i=0; i<6; i++)
+    {
+        strcpy(main[i].couleur,"\0");
+        strcpy(main[i].forme,"\0");
+    }
+}
+
+int rechercher_tuile_vide(TUILE* main)
+{
+
+    int i;
+    for(i=0; i<6; i++)
+    {
+        if(!strcmp(main[i].couleur,"\0"))
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+void piocher_une_tuile(TUILE* pioche, JOUEUR* player, int* taille_pioche)
+{
+    int i;
+
+    if(taille_pioche == 0)
+    {
+        printf("La pioche est vide\n");
+    }
+    else
+    {
+        i = rechercher_tuile_vide(player->main);        //Recherche de case vide dans la main
+
+        if(i == -1)
+        {
+            printf("Votre main est pleine\n");
+        }
+        else
+        {
+            copie_tuile(&pioche[*taille_pioche-1],&player->main[i]);
+            *taille_pioche -= 1 ;
+        }
+    }
+}
+
+void remplir_main(TUILE* pioche, JOUEUR* player, int* taille_pioche)
+{
+    int i;
+
+    for(i=0; i<6; i++)
+    {
+        piocher_une_tuile(pioche, player, taille_pioche);
+    }
+}
+
+
+
+
+
+
