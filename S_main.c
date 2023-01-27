@@ -4,30 +4,29 @@
 #include "H_plateau.h"
 
 
-#include <stdio.h>
-
-
-
 int main()
 {
+
     TUILE pioche[MAX_SIZE_TAB];
     JOUEUR J1;
     int taille_pioche = 108;
-
-    //*taille_pioche = 108;
+    JEU partie;
 
     chargement_pioche_normal(pioche);
     melanger_pioche_normal(pioche);
 
-    printf("******* MAIN VIDE ***********\n");
-    initialiser_main(J1.main);
-    affichage_liste_tuile(J1.main,6);
-
-    printf("******* MAIN pioche ***********\n");
 
     remplir_main(pioche, &J1, &taille_pioche);
+    printf("****** MAIN J1 ******\n");
+    affichage_main_joueur(J1);
+    printf("\n");
 
-    affichage_liste_tuile(J1.main,6);
+    initialiser_plateau(&partie);
+
+    poser_une_tuile(J1.main, &partie);
+
+    printf("****** PLATEAU ******\n");
+    affichage_plateau(partie);
 
     return EXIT_SUCCESS;
 }
