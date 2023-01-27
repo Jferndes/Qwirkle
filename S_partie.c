@@ -166,6 +166,28 @@ void remplir_main(TUILE* pioche, JOUEUR* player, int* taille_pioche)
     }
 }
 
+void poser_une_tuile(TUILE* main, JEU* partie)
+{
+    int pos;
+    int ligne;
+    int colonne;
+
+    printf("Choisir une tuile dans la main et donner sa position\n");
+    scanf("%d",&pos);
+
+    if(rechercher_tuile_vide(main) != pos)
+    {
+        printf("Choisir la postion dans le plateau (sous la forme 'n°ligne' 'n°colonne')\n");
+        scanf("%d %d", &ligne, &colonne);
+
+        copie_tuile(&main[pos-1], &partie->plateau[ligne-1][colonne-1]);
+    }
+    else
+    {
+        printf("Vous n'avez pas de tuile ici\n");
+    }
+}
+
 
 
 

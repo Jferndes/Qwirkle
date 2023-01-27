@@ -60,6 +60,39 @@ void Couleur(int couleurDuTexte,int couleurDeFond) //fonction d'affichage de cou
     HANDLE H=GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(H,couleurDeFond*16+couleurDuTexte);
 }
+int conversion_couleur(TUILE tuile)
+{
+    int couleur;
+
+
+    if(!strcmp(tuile.couleur,"ROUGE"))
+    {
+        couleur = ROUGE;
+    }
+    else if(!strcmp(tuile.couleur,"BLEU"))
+    {
+        couleur = BLEU;
+    }
+
+    else if(!strcmp(tuile.couleur,"VERT"))
+    {
+        couleur = VERT;
+    }
+    else if(!strcmp(tuile.couleur,"JAUNE"))
+    {
+        couleur = JAUNE;
+    }
+    else if(!strcmp(tuile.couleur,"ORANGE"))
+    {
+        couleur = ORANGE;
+    }
+    else if(!strcmp(tuile.couleur,"VIOLET"))
+    {
+        couleur = VIOLET;
+    }
+
+    return couleur;
+}
 
 void copie_tuile(TUILE* tuile_source, TUILE* tuile_destination)
 {
