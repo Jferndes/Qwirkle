@@ -51,7 +51,7 @@
 	"H_partie.h"
 	"H_plateau.h"
 
-1674654990 c:\users\joelf\onedrive\bureau\qwirkle\h_menu.h
+1674817694 c:\users\joelf\onedrive\bureau\qwirkle\h_menu.h
 	"H_autre.h"
 
 1674807293 c:\users\joelf\onedrive\bureau\qwirkle\h_partie.h
@@ -60,12 +60,12 @@
 1674814091 c:\users\joelf\onedrive\bureau\qwirkle\h_plateau.h
 	"H_autre.h"
 
-1674654990 source:c:\users\joelf\onedrive\bureau\qwirkle\s_menu.c
+1674817720 source:c:\users\joelf\onedrive\bureau\qwirkle\s_menu.c
 	"H_menu.h"
 
 1674813450 source:c:\users\joelf\onedrive\bureau\qwirkle\s_partie.c
 	"H_partie.h"
 
-1674815849 source:c:\users\joelf\onedrive\bureau\qwirkle\s_plateau.c
+1674816623 source:c:\users\joelf\onedrive\bureau\qwirkle\s_plateau.c
 	"H_plateau.h"
 

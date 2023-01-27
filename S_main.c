@@ -21,13 +21,12 @@ int main()
     affichage_main_joueur(J1);
     printf("\n");
 
-    initialiser_plateau(&partie);  //plateau remplie de A rouge pour test
+    initialiser_plateau(&partie);
 
     poser_une_tuile(J1.main, &partie);
 
     printf("****** PLATEAU ******\n");
     affichage_plateau(partie);
-
 
     return EXIT_SUCCESS;
 }
