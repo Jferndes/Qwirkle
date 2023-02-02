@@ -35,17 +35,17 @@
 	"partie.h"
 	"Qwirkle.h"
 
-1674805291 source:c:\users\joelf\onedrive\bureau\qwirkle\s_autre.c
+1675329787 source:c:\users\joelf\onedrive\bureau\qwirkle\s_autre.c
 	"H_autre.h"
 
-1674812567 c:\users\joelf\onedrive\bureau\qwirkle\h_autre.h
+1674844056 c:\users\joelf\onedrive\bureau\qwirkle\h_autre.h
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	<windows.h>
 	<time.h>
 
-1674815907 source:c:\users\joelf\onedrive\bureau\qwirkle\s_main.c
+1675330889 source:c:\users\joelf\onedrive\bureau\qwirkle\s_main.c
 	"H_autre.h"
 	"H_menu.h"
 	"H_partie.h"
@@ -54,18 +54,18 @@
 1674817694 c:\users\joelf\onedrive\bureau\qwirkle\h_menu.h
 	"H_autre.h"
 
-1674807293 c:\users\joelf\onedrive\bureau\qwirkle\h_partie.h
+1674843916 c:\users\joelf\onedrive\bureau\qwirkle\h_partie.h
 	"H_autre.h"
 
-1674814091 c:\users\joelf\onedrive\bureau\qwirkle\h_plateau.h
+1675329165 c:\users\joelf\onedrive\bureau\qwirkle\h_plateau.h
 	"H_autre.h"
 
 1674817720 source:c:\users\joelf\onedrive\bureau\qwirkle\s_menu.c
 	"H_menu.h"
 
-1674813450 source:c:\users\joelf\onedrive\bureau\qwirkle\s_partie.c
+1675329754 source:c:\users\joelf\onedrive\bureau\qwirkle\s_partie.c
 	"H_partie.h"
 
-1674816623 source:c:\users\joelf\onedrive\bureau\qwirkle\s_plateau.c
+1675330344 source:c:\users\joelf\onedrive\bureau\qwirkle\s_plateau.c
 	"H_plateau.h"
 

@@ -90,6 +90,10 @@ int conversion_couleur(TUILE tuile)
     {
         couleur = VIOLET;
     }
+    else if(!strcmp(tuile.couleur,"NOIR"))
+    {
+        couleur = NOIR;
+    }
 
     return couleur;
 }
@@ -107,4 +111,13 @@ void permutation_tuile(TUILE* tuile_source, TUILE* tuile_destination)
     copie_tuile(tuile_source,&tmp);
     copie_tuile(tuile_destination,tuile_source);
     copie_tuile(&tmp,tuile_destination);
+}
+
+TUILE tuile_vide()
+{
+    TUILE tuile_vide;
+    strcpy(tuile_vide.couleur,"\0");
+    strcpy(tuile_vide.forme,"\0");
+
+    return tuile_vide;
 }

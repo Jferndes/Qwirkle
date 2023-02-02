@@ -69,6 +69,7 @@ void Couleur(int couleurDuTexte,int couleurDeFond);                         //Ch
 int conversion_couleur(TUILE tuile);
 void copie_tuile(TUILE* tuile_source, TUILE* tuile_destination);            //Copie les caractéristiques (couleur,forme)dans une autre tuile
 void permutation_tuile(TUILE* tuile_source, TUILE* tuile_destination);      //Permute les caractéristiques de deux tuiles
+TUILE tuile_vide();
 #endif // H_AUTRE_H_INCLUDED
 /*
 --- 0 : Noir

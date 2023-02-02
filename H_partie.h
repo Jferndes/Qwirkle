@@ -3,7 +3,6 @@
 
 #include "H_autre.h"
 
-
 /** Déclaration des fonctions */
 
 void chargement_pioche_degrade(TUILE* pioche);                              //Chargement de la pioche dégradé à partir d'un fichier .txt

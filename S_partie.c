@@ -1,5 +1,7 @@
 #include "H_partie.h"
 
+
+
 void chargement_pioche_degrade(TUILE* pioche)
 {
     FILE* fichier = NULL;
@@ -180,7 +182,11 @@ void poser_une_tuile(TUILE* main, JEU* partie)
         printf("Choisir la postion dans le plateau (sous la forme 'n°ligne' 'n°colonne')\n");
         scanf("%d %d", &ligne, &colonne);
 
+        //Ajouter vérification posage de tuile
+
         copie_tuile(&main[pos-1], &partie->plateau[ligne-1][colonne-1]);
+        strcpy(main[pos-1].couleur,"NOIR");
+        strcpy(main[pos-1].forme,"\0");
     }
     else
     {
