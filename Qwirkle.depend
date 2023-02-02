@@ -45,7 +45,7 @@
 	<windows.h>
 	<time.h>
 
-1675348914 source:c:\users\joelf\onedrive\bureau\qwirkle\s_main.c
+1675379253 source:c:\users\joelf\onedrive\bureau\qwirkle\s_main.c
 	"H_autre.h"
 	"H_menu.h"
 	"H_partie.h"
@@ -54,8 +54,9 @@
 1675332562 c:\users\joelf\onedrive\bureau\qwirkle\h_menu.h
 	"H_autre.h"
 
-1675348090 c:\users\joelf\onedrive\bureau\qwirkle\h_partie.h
+1675365046 c:\users\joelf\onedrive\bureau\qwirkle\h_partie.h
 	"H_autre.h"
+	<stdbool.h>
 
 1675348089 c:\users\joelf\onedrive\bureau\qwirkle\h_plateau.h
 	"H_autre.h"
@@ -64,10 +65,10 @@
 1675332562 source:c:\users\joelf\onedrive\bureau\qwirkle\s_menu.c
 	"H_menu.h"
 
-1675351638 source:c:\users\joelf\onedrive\bureau\qwirkle\s_partie.c
+1675380882 source:c:\users\joelf\onedrive\bureau\qwirkle\s_partie.c
 	"H_partie.h"
 	"H_plateau.h"
 
-1675345055 source:c:\users\joelf\onedrive\bureau\qwirkle\s_plateau.c
+1675377620 source:c:\users\joelf\onedrive\bureau\qwirkle\s_plateau.c
 	"H_plateau.h"
 

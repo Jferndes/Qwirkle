@@ -50,8 +50,8 @@ void initialiser_plateau(JEU* partie)
     {
         for(j=0; j<MAX_SIZE_TAB_PLATEAU_VERTICAL; j++)
         {
-            strcpy(partie->plateau[i][j].couleur,"ROUGE");
-            strcpy(partie->plateau[i][j].forme," ");
+            strcpy(partie->plateau[i][j].couleur,"\0");
+            strcpy(partie->plateau[i][j].forme," \0"); //Ne pas oublier l'espace pour l'affichage
         }
     }
 }

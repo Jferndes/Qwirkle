@@ -6,6 +6,7 @@
 
 int main()
 {
+
     int i;
     TUILE pioche[MAX_SIZE_TAB];
     JOUEUR J1;
@@ -19,6 +20,10 @@ int main()
     remplir_main(pioche, &J1, &taille_pioche);
 
     initialiser_plateau(&partie);
+
+    strcpy(partie.plateau[3][3].couleur, "VERT");
+    strcpy(partie.plateau[3][3].forme, "PLUS");
+
     affichage_plateau(&partie);
 
     for(i = 0; i<7; i++)

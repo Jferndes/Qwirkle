@@ -183,6 +183,104 @@ void remplir_main(TUILE* pioche, JOUEUR* player, int* taille_pioche)
     }
 }
 
+bool validite_pos_tuile_plateau(int ligne, int colonne, TUILE tuile, JEU* partie)
+{
+    /*
+    //Cas toutes les cases adjacente sont vides (Ne pas faire en bordure ou dans les coins)
+    if(!strcmp("\0", partie->plateau[ligne][colonne+1].couleur) && !strcmp("\0", partie->plateau[ligne][colonne-1].couleur) && !strcmp("\0", partie->plateau[ligne-1][colonne].couleur) && !strcmp("\0", partie->plateau[ligne+1][colonne].couleur))
+    {
+        printf("\n");
+        printf("La position cible ne respect pas les regles : ");
+        Couleur(ROUGE,BLANC);
+        printf("Il n'y a aucune tuile adjacente");
+        Couleur(BLANC,NOIR);
+        printf("\n\n");
+
+        return false;
+    }
+    */
+
+    /**pour test*/
+    printf("forme tuile plateau : %s\n",partie->plateau[ligne-1][colonne].forme);
+    printf("forme tuile plateau : %s\n",tuile.forme);
+    printf("comparaison : %d\n",strcmp(tuile.forme, partie->plateau[ligne-1][colonne].forme));
+    printf("\n");
+    /** fin test */
+
+    //Cas Gauche de la pos cible : Vérification de la couleur (Ne pas faire si colonne = 0)
+    if(colonne != 0)
+    {
+        if(strcmp(tuile.couleur, partie->plateau[ligne][colonne-1].couleur) && strcmp(partie->plateau[ligne][colonne-1].couleur, "\0"))
+        {
+            printf("\n");
+            printf("La position cible ne respect pas les regles : ");
+            Couleur(ROUGE,BLANC);
+            printf("La tuile adjacente de gauche n'a pas la meme couleur'");
+            Couleur(BLANC,NOIR);
+            printf("\n\n");
+
+            return false;
+        }
+    }
+
+
+    //Cas Droite de la pos cible : Vérification de la couleur (Ne pas faire si colonne = 26)
+    if(colonne != 26)
+    {
+        if(strcmp(tuile.couleur, partie->plateau[ligne][colonne+1].couleur) && strcmp(partie->plateau[ligne][colonne+1].couleur, "\0"))
+        {
+            printf("\n");
+            printf("La position cible ne respect pas les regles : ");
+            Couleur(ROUGE,BLANC);
+            printf("La tuile adjacente de droite n'a pas la meme couleur");
+            Couleur(BLANC,NOIR);
+            printf("\n\n");
+
+            return false;
+        }
+    }
+
+    //Cas Haut de la pos cible : Vérification de la forme (Ne pas faire si ligne = 0)
+    if(ligne != 0)
+    {
+        if(strcmp(tuile.forme, partie->plateau[ligne-1][colonne].forme) && strcmp(partie->plateau[ligne-1][colonne].forme, " \0"))
+        {
+            printf("\n");
+            printf("La position cible ne respect pas les regles : ");
+            Couleur(ROUGE,BLANC);
+            printf("La tuile adjacente au-dessus n'a pas la meme forme");
+            Couleur(BLANC,NOIR);
+            printf("\n\n");
+
+            return false;
+        }
+    }
+
+
+    //Cas Bas de la pos cible : Vérification de la forme (Ne pas faire si ligne = 12)
+    if(ligne != 12)
+    {
+        if(strcmp(tuile.forme, partie->plateau[ligne+1][colonne].forme) && strcmp(partie->plateau[ligne+1][colonne].forme, " \0"))
+        {
+            printf("\n");
+            printf("La position cible ne respect pas les regles : ");
+            Couleur(ROUGE,BLANC);
+            printf("La tuile adjacente en-dessous n'a pas la meme forme");
+            Couleur(BLANC,NOIR);
+            printf("\n\n");
+
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+
+
+
+
 void poser_une_tuile(TUILE* main, JEU* partie)
 {
     int pos;
@@ -210,7 +308,7 @@ void poser_une_tuile(TUILE* main, JEU* partie)
             scanf("%d",&pos);
             nbtentative ++;
         }
-        while(!strcmp(main[pos-1].forme,"\0") || pos < 1 || pos > 6);
+        while(!strcmp(main[pos-1].forme,"\0") || pos < 1 || pos > 6); // la position est une tuile non-vide  et comprise entre 1 et 6
 
         printf("\n");
         printf("Vous allez placer la tuile :");
@@ -235,7 +333,7 @@ void poser_une_tuile(TUILE* main, JEU* partie)
             fflush(stdin);
             nbtentative ++;
         }
-        while(ligne<97 || ligne>109);
+        while(ligne<97 || ligne>109); //La ligne est comprise entre les lettres 'a' (code ascii 97) et 'l' (code ascii 109)
 
         nbtentative = 0;
         do
@@ -249,13 +347,21 @@ void poser_une_tuile(TUILE* main, JEU* partie)
             fflush(stdin);
             nbtentative ++;
         }
-        while(colonne<97 || colonne>123);
+        while(colonne<97 || colonne>123); //La colonne est comprise entre les lettres 'a' (code ascii 97) et 'z' (code ascii 123)
+
 
 
         /*copie sur le plateau et retrait de la tuile dans la main*/
-        copie_tuile(&main[pos-1], &partie->plateau[ligne-codeascii][colonne-codeascii]);
-        strcpy(main[pos-1].couleur,"\0");
-        strcpy(main[pos-1].forme,"\0");
+        if(validite_pos_tuile_plateau(ligne-codeascii,colonne-codeascii,main[pos-1], partie) == true)
+        {
+            copie_tuile(&main[pos-1], &partie->plateau[ligne-codeascii][colonne-codeascii]);
+            strcpy(main[pos-1].couleur,"\0");
+            strcpy(main[pos-1].forme,"\0");
+        }
+        else
+        {
+            printf("erreur\n\n");
+        }
     }
 }
 
