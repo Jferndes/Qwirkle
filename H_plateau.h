@@ -2,6 +2,7 @@
 #define H_PLATEAU_H_INCLUDED
 
 #include "H_autre.h"
+#include "H_plateau.h"
 
 /** Déclaration des fonctions */
 

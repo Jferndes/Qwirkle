@@ -51,7 +51,7 @@ void initialiser_plateau(JEU* partie)
         for(j=0; j<MAX_SIZE_TAB_PLATEAU_VERTICAL; j++)
         {
             strcpy(partie->plateau[i][j].couleur,"ROUGE");
-            strcpy(partie->plateau[i][j].forme,"A");
+            strcpy(partie->plateau[i][j].forme," ");
         }
     }
 }
@@ -60,7 +60,7 @@ void affichage_tuile_plateau(TUILE tuile, int couleur_fond)
 
     Couleur(conversion_couleur(tuile),couleur_fond);
     printf(" %c ",tuile.forme[0]);                      //forme[0] pour afficher le premier caractère de la chaine
-    Couleur(15,0);
+    Couleur(BLANC, NOIR);
 }
 
 void affichage_plateau(JEU* partie)
@@ -78,8 +78,9 @@ void affichage_plateau(JEU* partie)
         printf(" %c ", k+codeascii);
     }
     printf("   ");
-    printf("\n");
     Couleur(BLANC,NOIR);
+    printf("\n");
+
 
     for(i=0, k=0; i<MAX_SIZE_TAB_PLATEAU_HORIZONTAL; i++, k++)
     {
@@ -91,6 +92,7 @@ void affichage_plateau(JEU* partie)
             {
                 Couleur(BLANC, GRIS_SOMBRE);
                 printf(" %c ",k+codeascii);
+                Couleur(BLANC, NOIR);
             }
 
             /* Affichage des tuiles du plateau */
@@ -100,32 +102,29 @@ void affichage_plateau(JEU* partie)
                 {
                     Couleur(BLANC, GRIS_CLAIR);
                     affichage_tuile_plateau(partie->plateau[i][j],GRIS_CLAIR);
-                    Couleur(BLANC, NOIR);
                 }
                 else
                 {
                     affichage_tuile_plateau(partie->plateau[i][j],NOIR);
-                    Couleur(BLANC, NOIR);
                 }
             }
             else if(j%2 == 0)
             {
                 Couleur(BLANC, NOIR);
                 affichage_tuile_plateau(partie->plateau[i][j],NOIR);
-                Couleur(BLANC, NOIR);
             }
             else
             {
                 affichage_tuile_plateau(partie->plateau[i][j],GRIS_CLAIR);
-                Couleur(BLANC, NOIR);
             }
         }
 
         /* Affichage de la dernière colonne grise */
         Couleur(BLANC, GRIS_SOMBRE);
         printf("   ");
-        printf("\n");
         Couleur(BLANC,NOIR);
+        printf("\n");
+
     }
 
     /* Affichage de la dernière ligne grise */
@@ -154,9 +153,8 @@ void affichage_main_joueur_plateau(JOUEUR player)
         {
             Couleur(conversion_couleur(player.main[i]),NOIR);
             printf(" %c ",player.main[i].forme[0]);           //forme[0] pour afficher le premier caractère de la chaine
-            Couleur(15,0);
+            Couleur(BLANC,NOIR);
         }
 
     }
 }
-

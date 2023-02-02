@@ -1,5 +1,5 @@
 #include "H_partie.h"
-
+#include "H_plateau.h"
 
 
 void chargement_pioche_degrade(TUILE* pioche)
@@ -134,6 +134,21 @@ int rechercher_tuile_vide(TUILE* main)
     return -1;
 }
 
+int rechercher_tuile_occupe(TUILE* main)
+{
+
+    int i;
+    for(i=0; i<6; i++)
+    {
+        if(strcmp(main[i].couleur,"\0"))
+        {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
 void piocher_une_tuile(TUILE* pioche, JOUEUR* player, int* taille_pioche)
 {
     int i;
@@ -171,26 +186,76 @@ void remplir_main(TUILE* pioche, JOUEUR* player, int* taille_pioche)
 void poser_une_tuile(TUILE* main, JEU* partie)
 {
     int pos;
-    int ligne;
-    int colonne;
+    int codeascii;
+    int nbtentative;
+    char ligne;
+    char colonne;
 
-    printf("Choisir une tuile dans la main et donner sa position\n");
-    scanf("%d",&pos);
-
-    if(rechercher_tuile_vide(main) != pos)
+    /*Verification de la main du joueur*/
+    if(rechercher_tuile_occupe(main) == -1)
     {
-        printf("Choisir la postion dans le plateau (sous la forme 'n°ligne' 'n°colonne')\n");
-        scanf("%d %d", &ligne, &colonne);
-
-        //Ajouter vérification posage de tuile
-
-        copie_tuile(&main[pos-1], &partie->plateau[ligne-1][colonne-1]);
-        strcpy(main[pos-1].couleur,"NOIR");
-        strcpy(main[pos-1].forme,"\0");
+        printf("Votre main est vide. Vous ne pouvez pas poser de tuile\n");
     }
     else
     {
-        printf("Vous n'avez pas de tuile ici\n");
+        /*Boucle de contrôle position tuile*/
+        nbtentative = 0;
+        do
+        {
+            if(nbtentative != 0)
+            {
+                printf("Vous n'avez pas de tuile ici\n\n");
+            }
+            printf("Choisir une tuile dans la main et donner sa position\n");
+            scanf("%d",&pos);
+            nbtentative ++;
+        }
+        while(!strcmp(main[pos-1].forme,"\0") || pos < 1 || pos > 6);
+
+        printf("\n");
+        printf("Vous allez placer la tuile :");
+        affichage_tuile_plateau(main[pos-1], NOIR);
+        printf("\n");
+
+
+        codeascii = 97;
+        fflush(stdin);
+        printf("Choisir la postion dans le plateau (sous la forme lettre et chiffre)\n");
+
+        /*Boucle de contrôle position tuile*/
+        nbtentative = 0;
+        do
+        {
+            if(nbtentative != 0)
+            {
+                printf("Cette position n'est pas possible\n\n");
+            }
+            printf("ligne : ");
+            scanf("%c",&ligne);
+            fflush(stdin);
+            nbtentative ++;
+        }
+        while(ligne<97 || ligne>109);
+
+        nbtentative = 0;
+        do
+        {
+            if(nbtentative != 0)
+            {
+                printf("Cette position n'est pas possible\n\n");
+            }
+            printf("colonne : ");
+            scanf("%c", &colonne);
+            fflush(stdin);
+            nbtentative ++;
+        }
+        while(colonne<97 || colonne>123);
+
+
+        /*copie sur le plateau et retrait de la tuile dans la main*/
+        copie_tuile(&main[pos-1], &partie->plateau[ligne-codeascii][colonne-codeascii]);
+        strcpy(main[pos-1].couleur,"\0");
+        strcpy(main[pos-1].forme,"\0");
     }
 }
 
